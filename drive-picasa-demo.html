@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Galleria Google Drive Hosted with Picasa Plugin</title>
+        <style>
+
+            /* Demo styles */
+            html,body{background:#222;margin:0;}
+            body{border-top:4px solid #000;}
+            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+            h1{font-size:22px;font-weight:bold;color:#ddd;margin:0;}
+            p{margin:0 0 20px}
+            a {color:#22BCB9;text-decoration:none;}
+            .cred{margin-top:20px;font-size:11px;}
+
+            /* This rule is read by Galleria to define the gallery height: */
+            #galleria{height:640px;}
+		
+
+        </style>
+
+        <!-- load jQuery from Google Drive subfolder -->
+        <!-- Source: http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js -->
+        <script src="./js/jquery.js"></script>
+
+        <!-- load Galleria -->
+        <script src="./js/galleria-1.2.9.min.js"></script>
+
+        <!-- load picasa plugin -->
+        <script src="./plugins/picasa/galleria.picasa.min.js"></script>
+
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	
+
+    </head>
+<body>
+    <div class="content">
+        <h1>Galleria Google Drive Hosted and Picasa Plugin Demo  <g:plusone></g:plusone></h1>
+        <p>Demonstrating a basic gallery example hosted on Google Drive with photos from a public Picasa album.</p>
+	   
+
+        <!-- Adding gallery images. This is just a container for the dynamic picasa images -->
+
+        <div id="galleria"></div>
+
+        <p class="cred">Made by <a href="https://plus.google.com/116064700533628088794/about">Andreas Koll</a>. Based on <a href="http://galleria.aino.se">Galleria</a>.</p>
+    </div>
+    <script>
+
+    // Load the classic theme
+    Galleria.loadTheme('./themes/classic/galleria.classic.min.js');
+
+    Galleria.run('#galleria', {
+        // The user & album. This example fetches the album "ScrapbookPhotos" from the user "116064700533628088794"
+        picasa: 'useralbum:116064700533628088794/ScrapbookPhotos'
+    });
+
+    </script>
+    </body>
+</html>
